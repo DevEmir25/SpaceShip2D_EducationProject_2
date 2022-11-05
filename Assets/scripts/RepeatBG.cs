@@ -13,8 +13,8 @@ public class RepeatBG : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);  // Konumunu belirledigimiz degiskenlere gore hareket ettiriyoruz
-        if(transform.position.x < -8.17f)  // Eger x pozisyonumuz -8 den kucukse
+        transform.Translate(Vector3.left * speed * Time.deltaTime);  // Arka plani konumunu belirledigimiz degiskenlere gore hareket ettiriyoruz
+        if(transform.position.x < -14.05f)  // Eger x pozisyonumuz -14.05f den kucukse (oyun ekranimizin en sol siniri)
         {
             transform.position = StartPos;  // konumu tekrar baslangic konumuna getiriyoruz
         }

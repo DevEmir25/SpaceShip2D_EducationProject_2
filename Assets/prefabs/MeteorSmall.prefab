@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed56025c194a084dbe4bd3d7697765c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPos: {x: 0, y: 0, z: 0}
+  StartPosX: 12
 --- !u!61 &3644839456153301519
 BoxCollider2D:
   m_ObjectHideFlags: 0

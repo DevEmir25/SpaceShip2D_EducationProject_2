@@ -5,16 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public int ScoreCount = 0;  //Score tutmak icin degisken yaziyoruz
-    // Start is called before the first frame update
+    public int ScoreCount = 0;  //Score tutmak icin degisken yaziyoruz (bu islemi gameManager ile yapmamizin sebebi daha sonra yapacagimiz eklemeler
+                               //sirasinda ulasmamiz gerekirse her yerden ulasabilelim diye. Dilersek kaydedip baska sahnelerde de erisebiliriz.)
+
     void Start()
     {
         instance = this; 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

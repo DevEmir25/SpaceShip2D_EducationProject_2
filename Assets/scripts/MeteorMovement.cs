@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class MeteorMovement : MonoBehaviour
 {
-    public Vector3 StartPos;
+    public static MeteorMovement Instance;
     private float speed = 1f;
-
-    private void Start()
-    {
-        StartPos = transform.position;
-    }
     void Update()
     {
         transform.Translate(Vector3.left * speed * Time.deltaTime);
-        if (transform.position.x < -5f) // Eger x pozisyonu -5 ten kucukse objei yoket
+        if (transform.position.x < -10f) // Eger x pozisyonu -10 dan kucukse objei yoket
         {
             Destroy(gameObject);
         }
