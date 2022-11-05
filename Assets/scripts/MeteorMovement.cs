@@ -14,7 +14,7 @@ public class MeteorMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.left * speed * Time.deltaTime);
-        if (transform.position.x < -5f)
+        if (transform.position.x < -5f) // Eger x pozisyonu -5 ten kucukse objei yoket
         {
             Destroy(gameObject);
         }

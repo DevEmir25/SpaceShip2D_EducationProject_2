@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using TMPro;  // Text Mesh Pro icin kütüphane import ediyoruz
 
 public class LaserMovement : MonoBehaviour
 {
@@ -9,12 +9,12 @@ public class LaserMovement : MonoBehaviour
     public static LaserMovement Instance;
     public GameObject explosion;
 
-    TextMeshProUGUI Score;
+    TextMeshProUGUI Score;  // Score texti icin degisken yaziyoruz
 
     private void Awake()
     {
         Instance = this;
-        Score = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
+        Score = GameObject.Find("Score").GetComponent<TextMeshProUGUI>(); //Score objesini bulup o objenin textmeshpro componentini cekiyoruz
     }
     private void Update()
     {
@@ -24,13 +24,13 @@ public class LaserMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)  // Collider ile etkilesie girdiginde olacaklari bu metota yazicaz
     {
-        if (collision.gameObject.tag == "Meteor")
+        if (collision.gameObject.tag == "Meteor") // Eger lazerimizin collider 'ý ile etkilesime girerse
         {
-            GameManager.instance.ScoreCount++;
-            Score.text = "Score : " + GameManager.instance.ScoreCount.ToString(); 
-            Destroy(collision.gameObject);
+            GameManager.instance.ScoreCount++; //Score umuzu bir arttýrýyoruz
+            Score.text = "Score : " + GameManager.instance.ScoreCount.ToString(); // tuttugumuz score u gamemanager scriptinden cekip yazdiriyoruz
+            Destroy(collision.gameObject); //laserimizi yok ediyoruz
             GameObject mermi = Instantiate(explosion, collision.transform.position, Quaternion.identity);
             Destroy(mermi,0.8f);
             Destroy(gameObject);

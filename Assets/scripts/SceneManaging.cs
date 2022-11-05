@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneManaging : MonoBehaviour
 {
-    public void NextScene()
+    public void NextScene() // Sýradaki sahne metodu
     {
-        Time.timeScale = 1.0f;
+        Time.timeScale = 1.0f;  //Oyunu devam ettiren kod
+        SceneManager.LoadScene(1);  // Istedigimiz sahneyi yükleyen kod
+    }
+    public void Restart()  //Yeniden basla metodu
+    {
+        Time.timeScale = 1.0f; 
         SceneManager.LoadScene(1);
     }
-    public void Restart()
-    {
-        Time.timeScale = 1.0f;
-        SceneManager.LoadScene(1);
-    }
-    public void ReturnToMainMenu()
+    public void ReturnToMainMenu()  //Menuye donme metodu
     {
         SceneManager.LoadScene(0);
     }
